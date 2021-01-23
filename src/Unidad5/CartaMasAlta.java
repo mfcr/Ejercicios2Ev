@@ -1,6 +1,7 @@
 package Unidad5;
 
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class CartaMasAlta {
@@ -26,9 +27,9 @@ public class CartaMasAlta {
 		while (baraja.size()>0) {
 			//Sacamos carta de la baraja
 			cartaSacada=baraja.remove();
+			System.out.println("\n  La carta visible es "+cartaArriba.toString());
 			
 			if (jugador) { //Le toca jugar al juagador
-				System.out.println("\n  La carta visible es "+cartaArriba.toString());
 				String eleccion="";
 				while (!eleccion.equals("+")  && !eleccion.equals("-")) {
 					System.out.println("    Pulse + si cree que la siguiente carta es mas alta o - si cree que va a ser más baja:");
@@ -42,14 +43,20 @@ public class CartaMasAlta {
 					jugador=false;
 				}
 			} else { //Le toca jugar al PC.
+				//MODO ALEATORIO
+				//boolean pcElijeMas=true;
+				//if (rnd.nextInt(2)==0) {pcElijeMas=false;}
+				//MODO LOGICO
 				boolean pcElijeMas=true;
-				if 
+				if (cartaArriba.getValor()>5) {pcElijeMas=false;}
+				
+				System.out.println("      El PC ha elegido "+(pcElijeMas==true?"+":"-"));
 				if ((pcElijeMas && cartaSacada.getValor()>=cartaArriba.getValor()) || (!pcElijeMas && cartaSacada.getValor()<=cartaArriba.getValor())) {
 					System.out.println("      PC ha sacado la carta "+cartaSacada.toString()+", PC ha ganado un punto.");
 					ptosPC++;
 				} else {
 					System.out.println("      PC ha sacado la carta "+cartaSacada.toString()+", PC ha perdido el turno.");
-					jugador=true;
+					jugador=true; 
 				}
 			}
 			cartaArriba=cartaSacada; 
