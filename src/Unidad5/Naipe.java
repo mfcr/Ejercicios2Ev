@@ -11,6 +11,12 @@ public class Naipe {
 		this.nombre=nombre;
 		this.valor=valor;
 	}
+	public Naipe(String palo,String nombre) {
+		this.palo=palo;
+		this.nombre=nombre;
+		this.valor=0;
+	}
+
 	public void setNombre(String nombre) {this.nombre=nombre;}
 	public void setPalo(String palo) {this.palo=palo;}
 	public void setValor(int valor) {this.valor=valor;}
@@ -19,7 +25,7 @@ public class Naipe {
 	public int getValor() {return(valor);}
 	
 	@Override public String toString() {
-		return ("La carta es el "+nombre+"de "+palo+" y tiene el valor "+valor);
+		return ("La carta es el "+nombre+" de "+palo+" y tiene el valor "+valor);
 	}
 	
 }
