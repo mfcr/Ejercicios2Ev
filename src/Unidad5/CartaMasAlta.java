@@ -15,7 +15,7 @@ public class CartaMasAlta {
 	public static void main(String[] args) {
 		int[] valores= {1,2,3,4,5,6,7,8,9,10,14,11,12,13};
 		Mazo baraja=new Mazo(valores);
-		Random rnd=new Random();
+		//Random rnd=new Random();
 		int ptosUser=0,ptosPC=0;
 		Naipe cartaArriba;
 		Naipe cartaSacada;
