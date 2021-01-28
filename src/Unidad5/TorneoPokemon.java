@@ -24,6 +24,7 @@ public class TorneoPokemon {
 					if (ent.getNombre().toLowerCase().equals(partes[0].trim().toLowerCase())) {
 						ent.setPokemon(nuevoPok);
 						existe=true;
+						break;
 					}
 				}
 				if (!existe) {
