@@ -11,6 +11,10 @@ public class PruebaMascota {
 		String txtIn="";
 		while (!txtIn.toLowerCase().trim().equals("salir")) {
 			txtIn=teclado.nextLine().toLowerCase().trim();
+			if (txtIn.length()==0) {
+				System.out.print("Error, introduzca algo.");
+				continue;
+			}
 			String intro[]=txtIn.split(" ");
 			//localizamos a la mascota.
 			int ms=-1;

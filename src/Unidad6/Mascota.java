@@ -21,7 +21,7 @@ public class Mascota {
 			}
 		} else {
 			energia--;
-			return mensaje(4); //@@@ aqui hay que pulir, si se muere no avisa, solo dice que no puede comer, dormir, ejericico..
+			if (estado()>0) {return mensaje(4);}
 		}
 		return mensaje(estado());
 	}
@@ -31,8 +31,7 @@ public class Mascota {
 			energia+=2;
 		} else {
 			energia--;
-			return mensaje(4); //@@@ aqui hay que pulir, si se muere no avisa, solo dice que no puede comer, dormir, ejericico..
-								// variable string aux que acumule mensaje.
+			if (estado()>0) {return mensaje(4);}
 		}
 		return mensaje(estado());
 	}
@@ -42,9 +41,9 @@ public class Mascota {
 			energia-=3;
 		} else {
 			energia--;
-			return mensaje(4);
+			if (estado()>0) {return mensaje(4);}
 		}
-		return mensaje(estado()); //@@@ aqui hay que pulir, si se muere no avisa, solo dice que no puede comer, dormir, ejericico..
+		return mensaje(estado()); 
 	}
 	public String medicina() {
 		if (estado()>1) {
@@ -56,11 +55,11 @@ public class Mascota {
 	}
 	
 	public int estado() {
-		if (energia>55 || energia<0) {  //Muerto
+		if (energia>55 || energia<=0) {  //Muerto
 			return 0;
 		} else if (energia>50 || energia<5) { //Enfermo
 			return 1;
-		} else if (energia>46 || energia<8) { //
+		} else if (energia>46 || energia<8) { //aburrido
 			return 2;
 		} else {
 			return 3;
