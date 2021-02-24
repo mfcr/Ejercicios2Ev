@@ -9,33 +9,27 @@ public class Revistas extends Publicaciones {
 	
 	public Revistas() {
 		super();
-		setPrestable(false);
+		this.numero=0;
+		this.mes=0;
+		this.dia=0;
 	}
+	
 	public Revistas(int numero, int mes, int dia) {
 		super();
-		setPrestable(false);
 		this.numero=numero;
 		this.mes=mes;
 		this.dia=dia;
 	}
 
-	public Revistas(String codigo,int numero, int mes, int dia) {
-		super(codigo);
-		setPrestable(false);
-		this.numero=numero;
-		this.mes=mes;
-		this.dia=dia;
+	public Revistas(String codigo,String titulo,int anyo) {
+		super(codigo,titulo,anyo);
+		this.numero=0;
+		this.mes=0;
+		this.dia=0;
 	}
-	public Revistas(String codigo,String titulo,int numero, int mes, int dia) {
-		super(codigo,titulo);
-		setPrestable(false);
-		this.numero=numero;
-		this.mes=mes;
-		this.dia=dia;
-	}
+
 	public Revistas(String codigo,String titulo,int anyo,int numero, int mes, int dia) {
 		super(codigo,titulo,anyo);
-		setPrestable(false);
 		this.numero=numero;
 		this.mes=mes;
 		this.dia=dia;
@@ -50,7 +44,7 @@ public class Revistas extends Publicaciones {
 	public int getDia() {return dia;}
 	
 	public String toString() {
-		return("Revista "+super.toString());
+		return("Revista "+super.toString()+ "Num/Mes/Dia: "+numero+"/"+mes+"/"+dia);
 	}
 	
 

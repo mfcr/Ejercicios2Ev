@@ -4,9 +4,8 @@ package Unidad7;
 import java.util.List;
 import java.util.Arrays;
 
-public class Libros extends Publicaciones implements Prestables{
+public class Libros extends Prestables {
 	private List<String> autores;
-	private boolean prestado;
 	
 	public Libros() {
 		super();
@@ -16,18 +15,12 @@ public class Libros extends Publicaciones implements Prestables{
 		super();
 		this.autores=autores;
 	}
-	public Libros(String codigo,List<String> autores) {
-		super(codigo);
-		this.autores=autores;
-	}
-	public Libros(String codigo,String titulo,List<String> autores) {
-		super(codigo,titulo);
-		this.autores=autores;
-	}
+
 	public Libros(String codigo,String titulo,int anyo,List<String> autores) {
 		super(codigo,titulo,anyo);
 		this.autores=autores;
 	}
+
 	
 	public List<String> getAutores() { return autores; }
 	
@@ -41,10 +34,6 @@ public class Libros extends Publicaciones implements Prestables{
 	}
 	public void delAutores() {autores.clear();}
 	
-	public void prestar() { prestado=true;}
-	public void devolver() { prestado=false;}
-	
-	public boolean estaLibre() {return prestado;}
 	
 	public String toString() {
 		return("Libro "+super.toString());
