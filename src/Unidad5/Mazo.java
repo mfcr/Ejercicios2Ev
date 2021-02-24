@@ -55,6 +55,8 @@ public class Mazo {
 	public Naipe get() {
 		return cartas.get(rnd.nextInt(cartas.size()));
 	}
+	
+	
 	/**DEvuelve un Naipe al azar del mazo quitandolo del mazo
 	 * @return Naipe
 	 */
@@ -83,6 +85,10 @@ public class Mazo {
 	
 	public int size() {
 		return cartas.size();
+	}
+	
+	public ArrayList<Naipe> getCartas() {
+		return cartas;
 	}
 	
 	@Override public String toString() {
